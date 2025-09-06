@@ -84,6 +84,22 @@ public class Qes1_13 {
         
         // if文を使わずに判定
         System.out.println(age >= 25);
+     
+        // 数値を文字列に変換
+        String ageStr = String.valueOf(age);
+        String heightStr = String.valueOf(height);
+        String weightStr = String.valueOf(weight);
+
+        // 文字列を繋げて出力
+        System.out.println("年齢: " + ageStr + " 身長: " + heightStr + " 体重: " + weightStr);
+        
+        // 整数型に変換
+        int ageInt = Integer.parseInt(ageStr);
+        int heightInt = (int) Double.parseDouble(heightStr); // 小数をintにキャスト
+
+        // 出力
+        System.out.println("年齢(int): " + ageInt);
+        System.out.println("身長(int): " + heightInt);
         
     }
 }
