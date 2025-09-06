@@ -57,6 +57,17 @@ public class Qes1_13 {
         double height = 170.5;        // 身長
         double weight = 62.2;         // 体重
         String favoriteFood = "寿司"; // 好きな食べ物
+        
+        name = "鈴木一郎";
+        age = 24;
+        height = 168.5;
+        weight = 64.2;
+        favoriteFood = "オムライス";
+        
+        // --- 自己代入（和算） ---
+        age += age;
+        height += height;
+        weight += weight;
 
         // フォーマット通りに出力
         System.out.println("初めまして" + name + "です");
@@ -70,6 +81,9 @@ public class Qes1_13 {
 
         // BMIの出力
         System.out.println("BMIは" + String.format("%.2f", bmi) + "です");
+        
+        // if文を使わずに判定
+        System.out.println(age >= 25);
         
     }
 }
