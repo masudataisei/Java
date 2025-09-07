@@ -81,9 +81,6 @@ public class Qes1_13 {
 
         // BMIの出力
         System.out.println("BMIは" + String.format("%.2f", bmi) + "です");
-        
-        // if文を使わずに判定
-        System.out.println(age >= 25);
      
         // 数値を文字列に変換
         String ageStr = String.valueOf(age);
@@ -93,13 +90,17 @@ public class Qes1_13 {
         // 文字列を繋げて出力
         System.out.println("年齢: " + ageStr + " 身長: " + heightStr + " 体重: " + weightStr);
         
-        // 整数型に変換
-        int ageInt = Integer.parseInt(ageStr);
-        int heightInt = (int) Double.parseDouble(heightStr); // 小数をintにキャスト
+        // 11で変換したものを再現（例：年齢=25, 身長=170）
+        String strAge = "25";
+        String strHeight = "170";
+
+        // 条件をif文を使わずに判定
+        boolean result = (age == 25) || (height >= 160);
 
         // 出力
-        System.out.println("年齢(int): " + ageInt);
-        System.out.println("身長(int): " + heightInt);
+        System.out.println("年齢: " + age);
+        System.out.println("身長: " + height);
+        System.out.println("結果: " + result);
         
     }
 }
