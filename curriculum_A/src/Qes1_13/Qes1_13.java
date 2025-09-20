@@ -2,105 +2,121 @@ package Qes1_13;
 
 public class Qes1_13 {
     public static void main(String[] args) {
-        // 整数系
-        byte b = 10;          // バイト型
-        short s = 100;        // 短整数型
-        int i = 1000;         // 整数型
-        long l = 10000L;      // 長整数型（Lを付ける）
+        // ------------------------------
+        // 1. 整数系の変数（初期値を代入）
+        // ------------------------------
+        byte b = 0;           // 初期値 0
+        short s = 0;          // 初期値 0
+        int i = 0;            // 初期値 0
+        long l = 0L;          // 初期値 0
 
-        // 小数系
-        float f = 9.5f;       // 単精度浮動小数点数型（末尾に f が必要）
-        double d = 10.5;      // 倍精度浮動小数点数型
+        // 再代入（課題指定値）
+        b = 10;
+        s = 100;
+        i = 1000;
+        l = 10000L;
 
-        // 文字と文字列
-        char c = 'a';         // 文字型（シングルクォートで1文字）
-        String str = "ハロー"; // 文字列型（ダブルクォートで囲む）
+        // ------------------------------
+        // 2. 小数系
+        // ------------------------------
+        float f = 0.0f;
+        double d = 0.0;
 
-        // 論理型
-        boolean flag = true;  // ブーリアン型
-        
-        
-        
-        // 1. 11110
-        System.out.println(b + s + i + l);
+        f = 9.5f;
+        d = 10.5;
 
-        // 2. 20
-        System.out.println(f + d);
+        // ------------------------------
+        // 3. 文字型・文字列型・ブーリアン型
+        // ------------------------------
+        char c = ' ';         // 初期値 空白
+        String str = "";      // 初期値 空文字
+        boolean flag = false; // 初期値 false
 
-        // 3. a ハロー true
-        System.out.println(c + " " + str + " " + flag);
+        c = 'a';
+        str = "ハロー";
+        flag = true;
 
-        // 4. 11130 （整数だけを足す）
-        System.out.println(b + s + i + l + f + d);
+        // ------------------------------
+        // 4. 計算・出力
+        // ------------------------------
+        System.out.println(b + s + i + l);          // 11110
+        System.out.println(f + d);                  // 20.0
+        System.out.println(c + " " + str + " " + flag); // a ハロー true
+        System.out.println(b + s + i + l + f + d); // 11130.5
+        System.out.println(b * s * i * l);         // 10000000000
+        System.out.println(d / s);                 // 0.105
+        System.out.println(b - s);                 // -90
 
-        // 5. 10000000000
-        System.out.println(b * s * i * l);
-
-        // 6. 0.105
-        System.out.println(d / s);
-
-        // 7. -90
-        System.out.println(b - s);
-        
-        
-        
+        // ------------------------------
+        // 5. 文字列と数値の結合
+        // ------------------------------
         String num = "20";
         int num1 = 23;
+        System.out.println("ハローJAVA" + (Integer.parseInt(num) + num1)); // ハローJAVA43
 
-        // "20" を int に変換してから足す
-        System.out.println("ハローJAVA" + (Integer.parseInt(num) + num1));
+        // ------------------------------
+        // 6. 自己紹介の変数（初期値）
+        // ------------------------------
+        String name = "";
+        int age = 0;
+        double height = 0.0;
+        double weight = 0.0;
+        String favoriteFood = "";
 
-        
-        
-        String name = "山田太郎";     // 名前
-        int age = 18;                 // 年齢
-        double height = 170.5;        // 身長
-        double weight = 62.2;         // 体重
-        String favoriteFood = "寿司"; // 好きな食べ物
-        
-        name = "鈴木一郎";
-        age = 24;
-        height = 168.5;
-        weight = 64.2;
-        favoriteFood = "オムライス";
-        
-        // --- 自己代入（和算） ---
-        age += age;
-        height += height;
-        weight += weight;
+        // 初期値代入
+        name = "山田太郎";
+        age = 18;
+        height = 170.5;
+        weight = 62.2;
+        favoriteFood = "寿司";
 
-        // フォーマット通りに出力
         System.out.println("初めまして" + name + "です");
         System.out.println("年齢は" + age + "歳です");
         System.out.println("身長は" + height + "cmです");
         System.out.println("体重は" + weight + "kgです");
         System.out.println("好きな食べ物は" + favoriteFood + "です");
-        
-        // BMIの計算
-        double bmi = weight / ((height / 100.0) * (height / 100.0));
 
-        // BMIの出力
+        // 再代入（課題指定値）
+        name = "鈴木一郎";
+        age = 24;
+        height = 168.5;
+        weight = 64.2;
+        favoriteFood = "オムライス";
+
+        // 自己代入（和算）
+        age += age;
+        height += height;
+        weight += weight;
+
+        System.out.println("初めまして" + name + "です");
+        System.out.println("年齢は" + age + "歳です");
+        System.out.println("身長は" + height + "cmです");
+        System.out.println("体重は" + weight + "kgです");
+        System.out.println("好きな食べ物は" + favoriteFood + "です");
+
+        // BMI計算
+        double bmi = weight / ((height / 100.0) * (height / 100.0));
         System.out.println("BMIは" + String.format("%.2f", bmi) + "です");
-     
-        // 数値を文字列に変換
+
+        // ------------------------------
+        // 7. 数値を文字列に変換して出力
+        // ------------------------------
         String ageStr = String.valueOf(age);
         String heightStr = String.valueOf(height);
         String weightStr = String.valueOf(weight);
 
-        // 文字列を繋げて出力
         System.out.println("年齢: " + ageStr + " 身長: " + heightStr + " 体重: " + weightStr);
-        
-        // 11で変換したものを再現（例：年齢=25, 身長=170）
+
+        // ------------------------------
+        // 8. strAge / strHeight を使用して判定
+        // ------------------------------
         String strAge = "25";
         String strHeight = "170";
 
-        // 条件をif文を使わずに判定
-        boolean result = (age == 25) || (height >= 160);
+        int ageFromStr = Integer.parseInt(strAge);
+        int heightFromStr = Integer.parseInt(strHeight);
 
-        // 出力
-        System.out.println("年齢: " + age);
-        System.out.println("身長: " + height);
-        System.out.println("結果: " + result);
-        
+        boolean result = (ageFromStr >= 25) || (heightFromStr >= 160);
+        System.out.println("判定結果: " + result); // true
     }
 }
