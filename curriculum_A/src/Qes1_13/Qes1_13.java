@@ -5,10 +5,10 @@ public class Qes1_13 {
         // ------------------------------
         // 1. 整数系の変数（初期値を代入）
         // ------------------------------
-        byte b = 0;           // 初期値 0
-        short s = 0;          // 初期値 0
-        int i = 0;            // 初期値 0
-        long l = 0L;          // 初期値 0
+        byte b = 0;
+        short s = 0;
+        int i = 0;
+        long l = 0L;
 
         // 再代入（課題指定値）
         b = 10;
@@ -28,9 +28,9 @@ public class Qes1_13 {
         // ------------------------------
         // 3. 文字型・文字列型・ブーリアン型
         // ------------------------------
-        char c = ' ';         // 初期値 空白
-        String str = "";      // 初期値 空文字
-        boolean flag = false; // 初期値 false
+        char c = '\u0000';     // char の初期値（null文字）
+        String str = null;     // String の初期値は null
+        boolean flag = false;
 
         c = 'a';
         str = "ハロー";
@@ -55,15 +55,15 @@ public class Qes1_13 {
         System.out.println("ハローJAVA" + (Integer.parseInt(num) + num1)); // ハローJAVA43
 
         // ------------------------------
-        // 6. 自己紹介の変数（初期値）
+        // 6. 自己紹介の変数（初期値 → 再代入）
         // ------------------------------
-        String name = "";
+        String name = null;
         int age = 0;
         double height = 0.0;
         double weight = 0.0;
-        String favoriteFood = "";
+        String favoriteFood = null;
 
-        // 初期値代入
+        // 初期値代入（山田太郎）
         name = "山田太郎";
         age = 18;
         height = 170.5;
@@ -76,7 +76,11 @@ public class Qes1_13 {
         System.out.println("体重は" + weight + "kgです");
         System.out.println("好きな食べ物は" + favoriteFood + "です");
 
-        // 再代入（課題指定値）
+        // --- 山田太郎のBMIを出力 ---
+        double bmiYamada = weight / ((height / 100.0) * (height / 100.0));
+        System.out.println("BMIは" + String.format("%.2f", bmiYamada) + "です");
+
+        // 再代入（鈴木一郎）
         name = "鈴木一郎";
         age = 24;
         height = 168.5;
@@ -94,9 +98,9 @@ public class Qes1_13 {
         System.out.println("体重は" + weight + "kgです");
         System.out.println("好きな食べ物は" + favoriteFood + "です");
 
-        // BMI計算
-        double bmi = weight / ((height / 100.0) * (height / 100.0));
-        System.out.println("BMIは" + String.format("%.2f", bmi) + "です");
+        // --- 鈴木一郎のBMI ---
+        double bmiSuzuki = weight / ((height / 100.0) * (height / 100.0));
+        System.out.println("BMIは" + String.format("%.2f", bmiSuzuki) + "です");
 
         // ------------------------------
         // 7. 数値を文字列に変換して出力
